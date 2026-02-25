@@ -102,13 +102,13 @@
     <el-input v-model="formData.clusterName" :clearable="true" placeholder="请输入集群名字" />
 </el-form-item>
             <el-form-item label="CA证书:" prop="caCert">
-    <el-input v-model="formData.caCert" :clearable="true" placeholder="请输入CA证书" />
+    <el-input v-model="formData.caCert" type="textarea" :rows="4" :clearable="true" placeholder="请输入CA证书" />
 </el-form-item>
             <el-form-item label="客户端证书:" prop="clientCert">
-    <el-input v-model="formData.clientCert" :clearable="true" placeholder="请输入客户端证书" />
+    <el-input v-model="formData.clientCert" type="textarea" :rows="4" :clearable="true" placeholder="请输入客户端证书" />
 </el-form-item>
             <el-form-item label="客户端私钥:" prop="clientKey">
-    <el-input v-model="formData.clientKey" :clearable="true" placeholder="请输入客户端私钥" />
+    <el-input v-model="formData.clientKey" type="textarea" :rows="4" :clearable="true" placeholder="请输入客户端私钥" />
 </el-form-item>
             <el-form-item label="备注:" prop="remark">
     <el-input v-model="formData.remark" :clearable="true" placeholder="请输入备注" />

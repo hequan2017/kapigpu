@@ -7,7 +7,7 @@ aliyun-oss:
     base-path: yourBasePath
 autocode:
     web: web/src
-    root: D:\devops\test-2026\kapigpu
+    root: /workspace
     server: server
     module: github.com/flipped-aurora/gin-vue-admin/server
     ai-path: ""
@@ -84,7 +84,7 @@ hua-wei-obs:
     access-key: you-access-key
     secret-key: you-secret-key
 jwt:
-    signing-key: 310b0411-0e76-4e67-9c48-97944dd5ed2c
+    signing-key: 72c2cb01-6ae9-491d-8bd0-a82d3ee13465
     expires-time: 7d
     buffer-time: 1d
     issuer: qmPlus
@@ -140,7 +140,7 @@ mysql:
     prefix: ""
     port: "3307"
     config: charset=utf8mb4&parseTime=True&loc=Local
-    db-name: kapigpu
+    db-name: ""
     username: kapigpu
     password: "123456"
     path: 192.168.112.155
@@ -210,18 +210,18 @@ sqlite:
     prefix: ""
     port: ""
     config: ""
-    db-name: ""
+    db-name: gva
     username: ""
     password: ""
-    path: ""
+    path: ./data
     engine: ""
-    log-mode: ""
+    log-mode: error
     max-idle-conns: 10
     max-open-conns: 100
     singular: false
     log-zap: false
 system:
-    db-type: mysql
+    db-type: sqlite
     oss-type: local
     router-prefix: ""
     addr: 8888

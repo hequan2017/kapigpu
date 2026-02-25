@@ -1,20 +1,15 @@
 import legacyPlugin from '@vitejs/plugin-legacy'
 import { viteLogo } from './src/core/config'
-import Banner from 'vite-plugin-banner'
 import * as path from 'path'
 import * as dotenv from 'dotenv'
 import * as fs from 'fs'
 import vuePlugin from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import VueFilePathPlugin from './vitePlugin/componentName/index.js'
-import { svgBuilder } from 'vite-auto-import-svg'
-import vueRootValidator from 'vite-check-multiple-dom';
-import { AddSecret } from './vitePlugin/secret'
 import UnoCSS from '@unocss/vite'
 
 // @see https://cn.vitejs.dev/config/
 export default ({ mode }) => {
-  AddSecret('')
   const NODE_ENV = mode || 'development'
   const envFiles = [`.env.${NODE_ENV}`]
   for (const file of envFiles) {
@@ -25,8 +20,6 @@ export default ({ mode }) => {
   }
 
   viteLogo(process.env)
-
-  const timestamp = Date.parse(new Date())
 
   const optimizeDeps = {}
 
@@ -39,9 +32,9 @@ export default ({ mode }) => {
 
   const rollupOptions = {
     output: {
-      entryFileNames: 'assets/087AC4D233B64EB0[name].[hash].js',
-      chunkFileNames: 'assets/087AC4D233B64EB0[name].[hash].js',
-      assetFileNames: 'assets/087AC4D233B64EB0[name].[hash].[ext]'
+      entryFileNames: 'assets/[name]-[hash].js',
+      chunkFileNames: 'assets/[name]-[hash].js',
+      assetFileNames: 'assets/[name]-[hash].[ext]'
     }
   }
 
@@ -119,11 +112,8 @@ export default ({ mode }) => {
         ]
       }),
       vuePlugin(),
-      svgBuilder(['./src/plugin/', './src/assets/icons/'], base, outDir, 'assets', NODE_ENV),
-      [Banner(`\n Build based on kapigpu \n Time : ${timestamp}`)],
       VueFilePathPlugin('./src/pathInfo.json'),
-      UnoCSS(),
-      vueRootValidator()
+      UnoCSS()
     ]
   }
   return config

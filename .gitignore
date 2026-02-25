@@ -30,8 +30,8 @@ rm_file/
 /server/*.local.yaml
 server/uploads/
 /server/*.exe
-
-
+/server/server.exe
+/server/server.exe*
 *.iml
 web/.pnpm-debug.log
 web/pnpm-lock.yaml

@@ -15,5 +15,9 @@ func initBizRouter(routers ...*gin.RouterGroup) {
 	privateGroup := routers[0]
 	publicGroup := routers[1]
 
+	// Docker集群管理路由
+	dockerClusterRouter := router.RouterGroupApp.DockerCluster
+	dockerClusterRouter.InitDockerClusterRouter(privateGroup)
+
 	holder(publicGroup, privateGroup)
 }

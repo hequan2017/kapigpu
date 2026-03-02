@@ -247,5 +247,9 @@ zap:
     encode-level: LowercaseColorLevelEncoder
     stacktrace-key: stacktrace
     show-line: true
+# Docker集群配置
+# encrypt-key: AES加密密钥，必须是16、24或32字节长度
+docker-cluster:
+    encrypt-key: "gin-vue-admin-k8s-cluster-key!"
     log-in-console: true
     retention-day: -1
